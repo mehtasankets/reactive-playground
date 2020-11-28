@@ -46,3 +46,9 @@ If you want to learn more about building native executables, please consult http
 # Command Mode
 
 Guide: https://quarkus.io/guides/command-mode-reference
+
+# Test parallel calls
+
+```shell script
+seq 1 20000 | xargs -I $ -n1 -P20000  curl "http://localhost:8080/sleep/20"
+```
